@@ -11,8 +11,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66f27d27-a02c-4a07-a156-7813bc1cdb45" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ormconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/auth/TokenPayload.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/auth/jwt-authentication.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/auth/jwt.strategy.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/auth/local.strategy.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/auth/localAuth.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/auth/requestWithUser.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helper/mapper.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/users/create-user.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/users/user.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/users/user.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +51,34 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="typescript.add.unambiguous.imports.on.the.fly" value="true" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/users" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -46,7 +88,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607579958335</updated>
-      <workItem from="1607579959423" duration="85000" />
+      <workItem from="1607579959423" duration="16472000" />
     </task>
     <servers />
   </component>
@@ -63,5 +105,43 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="578" y="290" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607580894456">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="578" y="290" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607580894456" />
+    <state width="1659" height="275" key="GridCell.Tab.0.bottom" timestamp="1607604432000">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1659" height="275" key="GridCell.Tab.0.bottom/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607604432000" />
+    <state width="1659" height="275" key="GridCell.Tab.0.center" timestamp="1607604431999">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1659" height="275" key="GridCell.Tab.0.center/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607604431999" />
+    <state width="1659" height="275" key="GridCell.Tab.0.left" timestamp="1607604431999">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1659" height="275" key="GridCell.Tab.0.left/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607604431999" />
+    <state width="1659" height="275" key="GridCell.Tab.0.right" timestamp="1607604432000">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1659" height="275" key="GridCell.Tab.0.right/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607604432000" />
+    <state x="341" y="175" key="SettingsEditor" timestamp="1607600070200">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="341" y="175" key="SettingsEditor/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607600070200" />
+    <state x="636" y="453" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607603132368">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="636" y="453" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607603132368" />
+    <state x="542" y="275" width="596" height="522" key="find.popup" timestamp="1607603566654">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="542" y="275" width="596" height="522" key="find.popup/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607603566654" />
+    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1607599373664">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607599373664" />
   </component>
 </project>
