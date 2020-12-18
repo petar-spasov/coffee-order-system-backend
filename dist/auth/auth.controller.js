@@ -15,65 +15,33 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthController = void 0;
 const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
-const create_user_dto_1 = require("../users/create-user.dto");
-const localAuth_guard_1 = require("./localAuth.guard");
-const jwt_authentication_guard_1 = require("./jwt-authentication.guard");
+const Login_dto_1 = require("../users/dto/Login.dto");
+const Register_dto_1 = require("../users/dto/Register.dto");
 let AuthController = class AuthController {
     constructor(authService) {
         this.authService = authService;
     }
-    async register(createUserDto) {
-        return this.authService.register(createUserDto);
+    async login(loginData) {
+        return this.authService.login(loginData);
     }
-    async logIn(request, response) {
-        const { user } = request;
-        const cookie = this.authService.getCookieWithJwtToken(user.id);
-        response.setHeader('Set-Cookie', cookie);
-        user.password = undefined;
-        return response.send(user);
-    }
-    async logOut(request, response) {
-        response.setHeader('Set-Cookie', this.authService.getCookieForLogOut());
-        return response.sendStatus(200);
-    }
-    authenticate(request) {
-        const user = request.user;
-        user.password = undefined;
-        return user;
+    async register(user) {
+        return this.authService.register(user);
     }
 };
+__decorate([
+    common_1.Post('login'),
+    __param(0, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Login_dto_1.LoginDto]),
+    __metadata("design:returntype", Promise)
+], AuthController.prototype, "login", null);
 __decorate([
     common_1.Post('register'),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_user_dto_1.CreateUserDto]),
+    __metadata("design:paramtypes", [Register_dto_1.RegisterDto]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "register", null);
-__decorate([
-    common_1.HttpCode(200),
-    common_1.UseGuards(localAuth_guard_1.LocalAuthenticationGuard),
-    common_1.Post('log-in'),
-    __param(0, common_1.Req()), __param(1, common_1.Res()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, Object]),
-    __metadata("design:returntype", Promise)
-], AuthController.prototype, "logIn", null);
-__decorate([
-    common_1.UseGuards(jwt_authentication_guard_1.default),
-    common_1.Post('log-out'),
-    __param(0, common_1.Req()), __param(1, common_1.Res()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, Object]),
-    __metadata("design:returntype", Promise)
-], AuthController.prototype, "logOut", null);
-__decorate([
-    common_1.UseGuards(jwt_authentication_guard_1.default),
-    common_1.Get(),
-    __param(0, common_1.Req()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], AuthController.prototype, "authenticate", null);
 AuthController = __decorate([
     common_1.Controller('auth'),
     __metadata("design:paramtypes", [auth_service_1.AuthService])

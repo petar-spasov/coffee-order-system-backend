@@ -11,23 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66f27d27-a02c-4a07-a156-7813bc1cdb45" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ormconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/auth/TokenPayload.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/auth/jwt-authentication.guard.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/auth/jwt.strategy.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/auth/local.strategy.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/auth/localAuth.guard.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/auth/requestWithUser.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helper/mapper.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/users/create-user.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/users/user.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/users/user.entity.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/orders/orders.controller.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/orders/orders.controller.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/orders/orders.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/orders/orders.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/orders/orders.controller.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/orders/orders.controller.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/dist/tsconfig.build.tsbuildinfo" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +37,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
@@ -58,12 +47,69 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/coffee-sorts" />
+      <recent name="$PROJECT_DIR$/src/users/dto" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/users" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start">
+    <configuration name="AuthController.should be defined" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/auth/auth.controller.spec.ts" />
+      <test-names>
+        <test-name value="AuthController" />
+        <test-name value="should be defined" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="CoffeeSortsController.should return all sorts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/coffee-sorts/coffee-sorts.controller.spec.ts" />
+      <test-names>
+        <test-name value="CoffeeSortsController" />
+        <test-name value="should return all sorts" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="OrdersController.should update order status" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/orders/orders.controller.spec.ts" />
+      <test-names>
+        <test-name value="OrdersController" />
+        <test-name value="should update order status" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="StatusesController" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/statuses/statuses.controller.spec.ts" />
+      <test-names>
+        <test-name value="StatusesController" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -77,6 +123,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.start" />
+        <item itemvalue="Jest.StatusesController" />
+        <item itemvalue="Jest.CoffeeSortsController.should return all sorts" />
+        <item itemvalue="Jest.AuthController.should be defined" />
+        <item itemvalue="Jest.OrdersController.should update order status" />
       </list>
     </recent_temporary>
   </component>
@@ -88,7 +138,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607579958335</updated>
-      <workItem from="1607579959423" duration="16472000" />
+      <workItem from="1607579959423" duration="16648000" />
+      <workItem from="1607666259961" duration="15142000" />
+      <workItem from="1607860612313" duration="336000" />
+      <workItem from="1607926909897" duration="7507000" />
+      <workItem from="1607957634671" duration="7032000" />
+      <workItem from="1608187185643" duration="10492000" />
+      <workItem from="1608271947076" duration="2686000" />
     </task>
     <servers />
   </component>
@@ -105,43 +161,115 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="578" y="290" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607580894456">
+    <state x="100" y="123" width="1480" height="827" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1608205717149">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="578" y="290" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607580894456" />
-    <state width="1659" height="275" key="GridCell.Tab.0.bottom" timestamp="1607604432000">
+    <state x="100" y="123" width="1480" height="827" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608205717149" />
+    <state x="578" y="290" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607675076666">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="275" key="GridCell.Tab.0.bottom/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607604432000" />
-    <state width="1659" height="275" key="GridCell.Tab.0.center" timestamp="1607604431999">
+    <state x="578" y="290" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607675076666" />
+    <state width="1659" height="275" key="GridCell.Tab.0.bottom" timestamp="1608273273769">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="275" key="GridCell.Tab.0.center/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607604431999" />
-    <state width="1659" height="275" key="GridCell.Tab.0.left" timestamp="1607604431999">
+    <state width="1659" height="275" key="GridCell.Tab.0.bottom/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608273273769" />
+    <state width="1659" height="275" key="GridCell.Tab.0.center" timestamp="1608273273768">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="275" key="GridCell.Tab.0.left/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607604431999" />
-    <state width="1659" height="275" key="GridCell.Tab.0.right" timestamp="1607604432000">
+    <state width="1659" height="275" key="GridCell.Tab.0.center/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608273273768" />
+    <state width="1659" height="275" key="GridCell.Tab.0.left" timestamp="1608273273768">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="275" key="GridCell.Tab.0.right/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607604432000" />
+    <state width="1659" height="275" key="GridCell.Tab.0.left/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608273273768" />
+    <state width="1659" height="275" key="GridCell.Tab.0.right" timestamp="1608273273769">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1659" height="275" key="GridCell.Tab.0.right/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608273273769" />
+    <state width="1659" height="340" key="GridCell.Tab.1.bottom" timestamp="1608046323955">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1659" height="340" key="GridCell.Tab.1.bottom/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608046323955" />
+    <state width="1659" height="340" key="GridCell.Tab.1.center" timestamp="1608046323954">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1659" height="340" key="GridCell.Tab.1.center/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608046323954" />
+    <state width="1659" height="340" key="GridCell.Tab.1.left" timestamp="1608046323954">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1659" height="340" key="GridCell.Tab.1.left/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608046323954" />
+    <state width="1659" height="340" key="GridCell.Tab.1.right" timestamp="1608046323955">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1659" height="340" key="GridCell.Tab.1.right/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608046323955" />
+    <state width="1659" height="340" key="GridCell.Tab.2.bottom" timestamp="1608046323956">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1659" height="340" key="GridCell.Tab.2.bottom/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608046323956" />
+    <state width="1659" height="340" key="GridCell.Tab.2.center" timestamp="1608046323956">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1659" height="340" key="GridCell.Tab.2.center/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608046323956" />
+    <state width="1659" height="340" key="GridCell.Tab.2.left" timestamp="1608046323956">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1659" height="340" key="GridCell.Tab.2.left/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608046323956" />
+    <state width="1659" height="340" key="GridCell.Tab.2.right" timestamp="1608046323956">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1659" height="340" key="GridCell.Tab.2.right/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608046323956" />
+    <state width="1659" height="340" key="GridCell.Tab.3.bottom" timestamp="1608046323958">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1659" height="340" key="GridCell.Tab.3.bottom/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608046323958" />
+    <state width="1659" height="340" key="GridCell.Tab.3.center" timestamp="1608046323957">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1659" height="340" key="GridCell.Tab.3.center/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608046323957" />
+    <state width="1659" height="340" key="GridCell.Tab.3.left" timestamp="1608046323957">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1659" height="340" key="GridCell.Tab.3.left/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608046323957" />
+    <state width="1659" height="340" key="GridCell.Tab.3.right" timestamp="1608046323957">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1659" height="340" key="GridCell.Tab.3.right/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608046323957" />
     <state x="341" y="175" key="SettingsEditor" timestamp="1607600070200">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="341" y="175" key="SettingsEditor/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607600070200" />
+    <state x="100" y="123" width="1480" height="827" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1608208435110">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="100" y="123" width="1480" height="827" key="com.intellij.history.integration.ui.views.FileHistoryDialog/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608208435110" />
     <state x="636" y="453" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607603132368">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="636" y="453" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607603132368" />
-    <state x="542" y="275" width="596" height="522" key="find.popup" timestamp="1607603566654">
+    <state x="-1426" y="23" width="1426" height="867" maximized="true" key="dock-window-1" timestamp="1608272492974">
+      <screen x="-1440" y="23" width="1440" height="877" />
+    </state>
+    <state x="-1426" y="23" width="1426" height="867" maximized="true" key="dock-window-1/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608272492974" />
+    <state x="542" y="275" width="596" height="522" key="find.popup" timestamp="1608201736023">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="542" y="275" width="596" height="522" key="find.popup/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607603566654" />
-    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1607599373664">
+    <state x="542" y="275" width="596" height="522" key="find.popup/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1608201736023" />
+    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1607928396234">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607599373664" />
+    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/-1440.23.1440.877/0.23.1680.1027@0.23.1680.1027" timestamp="1607928396234" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/test/app.e2e-spec.ts</url>
+          <line>17</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

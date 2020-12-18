@@ -17,7 +17,6 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const user_entity_1 = require("./user.entity");
 const typeorm_2 = require("typeorm");
-const mapper_1 = require("../helper/mapper");
 let UsersService = class UsersService {
     constructor(usersRepository) {
         this.usersRepository = usersRepository;
@@ -27,17 +26,17 @@ let UsersService = class UsersService {
         if (user) {
             return user;
         }
-        throw new common_1.HttpException('User doesn\'t exist.', common_1.HttpStatus.NOT_FOUND);
+        throw new common_1.HttpException('Benutzer existiert nicht.', common_1.HttpStatus.NOT_FOUND);
     }
     async getById(id) {
         const user = await this.usersRepository.findOne({ id });
         if (user) {
             return user;
         }
-        throw new common_1.HttpException('User with this id does not exist', common_1.HttpStatus.NOT_FOUND);
+        throw new common_1.HttpException('Benutzer existiert nicht.', common_1.HttpStatus.NOT_FOUND);
     }
-    async createUser(user) {
-        return await this.usersRepository.save(mapper_1.mapCreateUserDtoToUser(user));
+    async create(userData) {
+        return await this.usersRepository.save(userData);
     }
 };
 UsersService = __decorate([

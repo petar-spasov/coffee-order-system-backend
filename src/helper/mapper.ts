@@ -1,8 +1,8 @@
-import {CreateUserDto} from "../users/create-user.dto";
 import {User} from "../users/user.entity";
-import {UserDto} from "../users/user.dto";
+import {RegisterDto} from "../users/dto/Register.dto";
+import {UserDto} from "../users/dto/User.dto";
 
-export const mapCreateUserDtoToUser = (createUser: CreateUserDto): User => {
+export const mapRegisterDtoToUser = (createUser: RegisterDto): User => {
     const user = new User();
     for (const [key, value] of Object.entries(createUser)) {
         user[key] = value;
@@ -13,7 +13,7 @@ export const mapCreateUserDtoToUser = (createUser: CreateUserDto): User => {
 export const mapUserToUserDto = (user: User): UserDto => {
     const userDto = new UserDto();
     for (const [key, value] of Object.entries(user)) {
-        if (key == "password"){
+        if(key === 'password'){
             continue;
         }
         userDto[key] = value;

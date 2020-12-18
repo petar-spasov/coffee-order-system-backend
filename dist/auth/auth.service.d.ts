@@ -1,14 +1,17 @@
 import { UsersService } from "../users/users.service";
-import { CreateUserDto } from "../users/create-user.dto";
 import { JwtService } from "@nestjs/jwt";
-import { ConfigService } from "@nestjs/config";
+import { User } from "../users/user.entity";
+import { LoginDto } from "../users/dto/Login.dto";
+import { RegisterDto } from "../users/dto/Register.dto";
+import { UserDto } from "../users/dto/User.dto";
 export declare class AuthService {
     private readonly usersService;
     private readonly jwtService;
-    private readonly configService;
-    constructor(usersService: UsersService, jwtService: JwtService, configService: ConfigService);
-    register(user: CreateUserDto): Promise<import("../users/user.entity").User>;
-    authenticateUser(email: string, password: string): Promise<import("../users/user.entity").User>;
-    getCookieWithJwtToken(userId: number): string;
-    getCookieForLogOut(): string;
+    constructor(usersService: UsersService, jwtService: JwtService);
+    checkIfUserExists(loginData: LoginDto): Promise<User>;
+    checkPassword(passwordData: string, hashedPassowrd: string): Promise<void>;
+    login(loginData: LoginDto): Promise<any | {
+        status: number;
+    }>;
+    register(registrationData: RegisterDto): Promise<UserDto>;
 }

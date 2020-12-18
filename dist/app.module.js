@@ -12,23 +12,21 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const typeorm_1 = require("@nestjs/typeorm");
 const users_module_1 = require("./users/users.module");
-const config_1 = require("@nestjs/config");
-const Joi = require("joi");
 const auth_module_1 = require("./auth/auth.module");
+const statuses_module_1 = require("./statuses/statuses.module");
+const coffee_sorts_module_1 = require("./coffee-sorts/coffee-sorts.module");
+const orders_module_1 = require("./orders/orders.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
         imports: [
-            config_1.ConfigModule.forRoot({
-                validationSchema: Joi.object({
-                    JWT_SECRET: '123',
-                    JWT_EXPIRATION_TIME: '3900',
-                })
-            }),
             typeorm_1.TypeOrmModule.forRoot(),
             users_module_1.UsersModule,
             auth_module_1.AuthModule,
+            statuses_module_1.StatusesModule,
+            coffee_sorts_module_1.CoffeeSortsModule,
+            orders_module_1.OrdersModule,
         ],
         controllers: [
             app_controller_1.AppController,

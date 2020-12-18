@@ -1,12 +1,10 @@
 import { AuthService } from "./auth.service";
-import { CreateUserDto } from "../users/create-user.dto";
-import RequestWithUser from "./requestWithUser.interface";
-import { Response } from "express";
+import { LoginDto } from "../users/dto/Login.dto";
+import { RegisterDto } from "../users/dto/Register.dto";
+import { UserDto } from "../users/dto/User.dto";
 export declare class AuthController {
     private readonly authService;
     constructor(authService: AuthService);
-    register(createUserDto: CreateUserDto): Promise<import("../users/user.entity").User>;
-    logIn(request: RequestWithUser, response: Response): Promise<Response<any>>;
-    logOut(request: RequestWithUser, response: Response): Promise<Response<any>>;
-    authenticate(request: RequestWithUser): import("../users/user.entity").User;
+    login(loginData: LoginDto): Promise<any>;
+    register(user: RegisterDto): Promise<UserDto>;
 }

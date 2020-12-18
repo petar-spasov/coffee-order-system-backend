@@ -1,58 +1,63 @@
 import {HttpException, HttpStatus, Injectable} from '@nestjs/common';
 import {UsersService} from "../users/users.service";
-import {CreateUserDto} from "../users/create-user.dto";
-import * as bcrypt from 'bcrypt';
 import {JwtService} from "@nestjs/jwt";
-import {ConfigService} from "@nestjs/config";
+import {User} from "../users/user.entity";
+import * as bcrypt from 'bcrypt';
+import {LoginDto} from "../users/dto/Login.dto";
+import {RegisterDto} from "../users/dto/Register.dto";
+import {mapRegisterDtoToUser, mapUserToUserDto} from "../helper/mapper";
+import {UserDto} from "../users/dto/User.dto";
 
 @Injectable()
 export class AuthService {
+
     constructor(
         private readonly usersService: UsersService,
-        private readonly jwtService: JwtService,
-        private readonly configService: ConfigService) {}
-
-    public async register(user: CreateUserDto) {
-        const hashedPassword = await bcrypt.hash(user.password, 10);
-        try {
-            const createdUser = await this.usersService.createUser({
-                ...user,
-                password: hashedPassword,
-            });
-            //todo map to dto
-            createdUser.password = undefined;
-            return createdUser;
-        } catch (error){
-            if (error.code === 'ER_DUP_ENTRY'){
-                throw new HttpException('User with that email already exists.', HttpStatus.BAD_REQUEST);
-            }
-            throw new HttpException('Internal server error.', HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        private readonly jwtService: JwtService
+    ) {
     }
 
-    public async authenticateUser(email: string, password: string){
+    public async checkIfUserExists(loginData: LoginDto): Promise<User> {
         try {
-            const user = await this.usersService.getByEmail(email);
-            const hashedPassword = await bcrypt.hash(password, 10);
-            const isPasswordCorrect = await  bcrypt.compare(hashedPassword, user.password);
-            if (!isPasswordCorrect){
-                throw new HttpException('Wrong credentials.', HttpStatus.BAD_REQUEST);
-            }
-            //todo map to dto
-            user.password = undefined;
+            const user: User = await this.usersService.getByEmail(loginData.email);
+            await this.checkPassword(loginData.password, user.password)
             return user;
-        } catch (error) {
-            throw new HttpException('Wrong credentials provided', HttpStatus.BAD_REQUEST);
+        } catch (error){
+            throw new HttpException('Ungültige Angaben.', HttpStatus.BAD_REQUEST);
         }
     }
 
-    public getCookieWithJwtToken(userId: number) {
-        const payload: TokenPayload = { userId };
-        const token = this.jwtService.sign(payload);
-        return `Authentication=${token}; HttpOnly; Path=/; Max-Age=${this.configService.get('JWT_EXPIRATION_TIME')}`;
+    public async checkPassword(passwordData: string, hashedPassowrd: string) {
+        const isPasswordCorrect = await bcrypt.compare(passwordData, hashedPassowrd);
+        if (!isPasswordCorrect) {
+            throw new HttpException('Ungültige Angaben.', HttpStatus.BAD_REQUEST);
+        }
     }
 
-    public getCookieForLogOut() {
-        return `Authentication=; HttpOnly; Path=/; Max-Age=0`;
+    public async login(loginData: LoginDto): Promise<any | { status: number }> {
+        const foundUser: User = await this.checkIfUserExists(loginData);
+        const payload: UserDto = {
+            id: foundUser.id,
+            name: foundUser.name,
+            lastName: foundUser.lastName,
+            email: foundUser.email
+        };
+        const accessToken = this.jwtService.sign(payload);
+        return {
+            access_token: accessToken,
+            payload,
+        };
+    }
+
+    public async register(registrationData: RegisterDto): Promise<UserDto> {
+        const user: User = mapRegisterDtoToUser(registrationData);
+        try {
+            return mapUserToUserDto(await this.usersService.create(user));
+        } catch (error) {
+            if (error.code === 'ER_DUP_ENTRY'){
+                throw new HttpException('Diese E-Mail Adresse wird bereits verwendet', HttpStatus.BAD_REQUEST);
+            }
+            throw new HttpException('Server-Error. Bitte Kontaktieren Sie den Support', HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

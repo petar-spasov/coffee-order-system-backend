@@ -2,9 +2,6 @@ import {HttpException, HttpStatus, Injectable} from '@nestjs/common';
 import {InjectRepository} from "@nestjs/typeorm";
 import {User} from "./user.entity";
 import {Repository} from "typeorm";
-import {mapCreateUserDtoToUser, mapUserToUserDto} from "../helper/mapper";
-import {UserDto} from "./user.dto";
-
 @Injectable()
 export class UsersService {
 
@@ -19,7 +16,7 @@ export class UsersService {
         if (user){
             return user;
         }
-        throw new HttpException('User doesn\'t exist.', HttpStatus.NOT_FOUND);
+        throw new HttpException('Benutzer existiert nicht.', HttpStatus.NOT_FOUND);
     }
 
     async getById(id: number) {
@@ -27,10 +24,10 @@ export class UsersService {
         if (user) {
             return user;
         }
-        throw new HttpException('User with this id does not exist', HttpStatus.NOT_FOUND);
+        throw new HttpException('Benutzer existiert nicht.', HttpStatus.NOT_FOUND);
     }
 
-    async createUser(user): Promise<User> {
-        return await this.usersRepository.save(mapCreateUserDtoToUser(user));
+    async create(userData: User) {
+        return await this.usersRepository.save(userData);
     }
 }

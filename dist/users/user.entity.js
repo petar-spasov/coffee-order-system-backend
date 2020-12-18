@@ -11,7 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
 const typeorm_1 = require("typeorm");
+const bcrypt = require("bcrypt");
 let User = class User {
+    async hashPassword() {
+        this.password = await bcrypt.hash(this.password, 10);
+    }
 };
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
@@ -33,9 +37,15 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "email", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column("char", { length: 60 }),
     __metadata("design:type", String)
 ], User.prototype, "password", void 0);
+__decorate([
+    typeorm_1.BeforeInsert(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], User.prototype, "hashPassword", null);
 User = __decorate([
     typeorm_1.Entity()
 ], User);
